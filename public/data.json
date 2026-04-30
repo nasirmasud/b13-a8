@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "Jhankar Mahbub",
+    "duration": "45 hours",
+    "rating": 4.9,
+    "level": "Beginner",
+    "description": "Master HTML, CSS, JavaScript, React, and Node.js to build industry-ready projects.",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "Advanced Next.js 15 Mastery",
+    "instructor": "Sumit Saha",
+    "duration": "15 hours",
+    "rating": 4.8,
+    "level": "Advanced",
+    "description": "Deep dive into App Router, Server Actions, and Performance Optimization in Next.js.",
+    "image": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=1000",
+    "category": "Development"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Design Fundamentals",
+    "instructor": "Jane Cooper",
+    "duration": "12 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Learn the principles of modern UI/UX design using Figma and Adobe XD.",
+    "image": "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1000",
+    "category": "Design"
+  },
+  {
+    "id": 4,
+    "title": "Full-Stack MERN Stack Mastery",
+    "instructor": "Anisul Islam",
+    "duration": "60 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Build and deploy complex full-stack applications using MongoDB, Express, React, and Node.",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1000",
+    "category": "Development"
+  },
+  {
+    "id": 5,
+    "title": "Digital Marketing Strategy 2026",
+    "instructor": "Robert Fox",
+    "duration": "25 hours",
+    "rating": 4.5,
+    "level": "Beginner",
+    "description": "Comprehensive guide to SEO, SEM, and Social Media Marketing in the modern era.",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000",
+    "category": "Marketing"
+  },
+  {
+    "id": 6,
+    "title": "Python for Data Science",
+    "instructor": "Dr. Angela Yu",
+    "duration": "30 hours",
+    "rating": 4.8,
+    "level": "Intermediate",
+    "description": "Master Python libraries like Pandas, NumPy, and Matplotlib for data analysis.",
+    "image": "https://images.unsplash.com/photo-1551288049-bbbda540d379?q=80&w=1000",
+    "category": "Data Science"
+  },
+  {
+    "id": 7,
+    "title": "Mastering TypeScript & Clean Code",
+    "instructor": "Maximilian Schwarzmüller",
+    "duration": "18 hours",
+    "rating": 4.7,
+    "level": "Intermediate",
+    "description": "Write enterprise-level clean code using TypeScript and SOLID principles.",
+    "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=1000",
+    "category": "Development"
+  },
+  {
+    "id": 8,
+    "title": "App Development with Flutter",
+    "instructor": "Hitesh Choudhary",
+    "duration": "40 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Build beautiful native cross-platform apps for iOS and Android using Flutter.",
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000",
+    "category": "Mobile Dev"
+  },
+  {
+    "id": 9,
+    "title": "Cyber Security Essentials",
+    "instructor": "Nathan House",
+    "duration": "22 hours",
+    "rating": 4.9,
+    "level": "Beginner",
+    "description": "Learn to protect systems and networks from digital attacks from ground up.",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000",
+    "category": "Security"
+  },
+  {
+    "id": 10,
+    "title": "GraphQL Mastery with Apollo",
+    "instructor": "Stephen Grider",
+    "duration": "14 hours",
+    "rating": 4.7,
+    "level": "Advanced",
+    "description": "Build high-performance APIs and learn efficient data fetching with GraphQL.",
+    "image": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1000",
+    "category": "Development"
+  }
+]

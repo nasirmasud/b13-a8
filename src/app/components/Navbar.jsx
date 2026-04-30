@@ -22,10 +22,10 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className="w-full bg-white/90 backdrop-blur-md sticky top-0 z-[100] border-b border-slate-200 shadow-sm container mx-auto"
+      className="w-full bg-white/90 backdrop-blur-md sticky top-0 z-[100] border-b border-slate-200 shadow-sm"
     >
       {/* Desktop Version */}
-      <div className="hidden lg:flex items-center h-16 px-4 gap-4 max-w-[1340px] mx-auto">
+      <div className="hidden lg:flex items-center h-16 px-6 gap-4 max-w-[1440px] mx-auto">
         <Link href="/" className="flex-shrink-0 mr-2">
           <motion.h1
             whileHover={{ scale: 1.05 }}
