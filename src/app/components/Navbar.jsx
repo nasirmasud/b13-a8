@@ -2,15 +2,17 @@
 
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
   const { scrollY } = useScroll();
 
-  const shadow = useTransform(scrollY, [0, 50], ["0px 0px 0px rgba(0,0,0,0)", "0px 4px 20px rgba(0,0,0,0.05)"]);
+  const shadow = useTransform(scrollY, [0, 50], ["0px 0px 0px rgba(0,0,0,0)", "0px 4px 20px rgba(0,0,0,0.08)"]);
 
-  const logoGradient = "bg-gradient-to-r from-[#0919fb] via-[#54f73f] to-[#9100f8] bg-clip-text text-transparent";
+  const logoGradient = "bg-gradient-to-r from-[#4f46e5] via-[#54f73f] to-[#a855f7] bg-clip-text text-transparent";
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -20,20 +22,20 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      style={{ boxShadow: shadow }}
-      className="w-full bg-white/80 backdrop-blur-md sticky top-0 z-[100] border-b border-slate-200"
+      className="w-full bg-white/90 backdrop-blur-md sticky top-0 z-[100] border-b border-slate-200 shadow-sm container mx-auto"
     >
       {/* Desktop Version */}
       <div className="hidden lg:flex items-center h-16 px-4 gap-4 max-w-[1340px] mx-auto">
         <Link href="/" className="flex-shrink-0 mr-2">
           <motion.h1
             whileHover={{ scale: 1.05 }}
-            className={`font-display font-extrabold text-2xl tracking-tight ${logoGradient} cursor-pointer`}
+            className={`font-montserrat font-extrabold text-2xl tracking-tight ${logoGradient} cursor-pointer`}
           >
             SkillSphere
           </motion.h1>
         </Link>
 
+        {/* Search Bar */}
         <div className="flex-1 mx-2">
           <div className="relative flex items-center w-full">
             <span className="absolute left-4 text-slate-400">
@@ -45,34 +47,38 @@ const Navbar = () => {
               whileFocus={{ scale: 1.01 }}
               type="text"
               placeholder="Search for courses"
-              className="w-full pl-10 pr-5 py-2.5 rounded-full border border-slate-300 bg-white text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-purple-600 focus:ring-1 focus:ring-purple-100 transition-all"
+              className="w-full pl-10 pr-5 py-2.5 rounded-full border border-slate-200 bg-slate-50 text-sm text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-[#1e1b4b] focus:ring-1 focus:ring-[#1e1b4b]/10 transition-all"
             />
           </div>
         </div>
 
         {/* Desktop Links */}
         <div className="flex items-center gap-7 flex-shrink-0 ml-2">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="relative group text-sm font-medium text-slate-700">
-              {link.label}
-              <motion.span
-                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300"
-              />
-            </Link>
-          ))}
-
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link key={link.href} href={link.href} className="relative group text-sm font-medium">
+                <span className={`${isActive ? 'text-[#4f46e5]' : 'text-slate-700'} transition-colors`}>
+                  {link.label}
+                </span>
+                <motion.span
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-[#4f46e5] transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}
+                />
+              </Link>
+            );
+          })}
           <div className="flex items-center gap-3">
             <motion.button
-              whileHover={{ y: -2, boxShadow: "0px 4px 10px rgba(0,0,0,0.05)" }}
+              whileHover={{ y: -1 }}
               whileTap={{ scale: 0.95 }}
-              className="px-5 py-2 text-sm font-bold border border-purple-900 text-purple-900 rounded-lg hover:bg-purple-50 transition-colors"
+              className="px-5 py-2 text-sm font-bold border border-[#1e1b4b] text-[#1e1b4b] rounded-lg hover:bg-[#1e1b4b] hover:text-white transition-all font-montserrat"
             >
               Log in
             </motion.button>
             <motion.button
-              whileHover={{ y: -2, boxShadow: "0px 8px 15px rgba(126, 34, 206, 0.3)" }}
+              whileHover={{ y: -1, boxShadow: "0px 10px 20px rgba(30, 27, 75, 0.2)" }}
               whileTap={{ scale: 0.95 }}
-              className="px-5 py-2 text-sm font-bold bg-purple-800 text-white rounded-lg hover:bg-purple-900 transition-shadow"
+              className="px-5 py-2 text-sm font-bold bg-[#1e1b4b] text-white rounded-lg hover:bg-indigo-900 transition-all font-montserrat"
             >
               Sign up
             </motion.button>
@@ -85,7 +91,7 @@ const Navbar = () => {
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpen(!isOpen)}
-          className="text-slate-700"
+          className="text-[#1e1b4b]"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -94,13 +100,13 @@ const Navbar = () => {
 
         <div className="flex-1 flex justify-center">
           <Link href="/">
-            <span className={`font-display font-extrabold text-2xl tracking-tight ${logoGradient}`}>
+            <span className={`font-montserrat font-extrabold text-2xl tracking-tight ${logoGradient}`}>
               SkillSphere
             </span>
           </Link>
         </div>
 
-        <button className="text-slate-700">
+        <button className="text-[#1e1b4b]">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
           </svg>
@@ -116,7 +122,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-purple-900/40 backdrop-blur-sm z-[110] lg:hidden"
+              className="fixed inset-0 bg-[#1e1b4b]/40 backdrop-blur-sm z-[110] lg:hidden"
             />
 
             <motion.div
@@ -127,7 +133,7 @@ const Navbar = () => {
               className="fixed top-0 left-0 w-4/5 max-w-sm h-full bg-white z-[120] lg:hidden flex flex-col shadow-2xl"
             >
               <div className="flex items-center justify-between p-5 border-b border-slate-100">
-                <span className={`font-display font-extrabold text-xl ${logoGradient}`}>
+                <span className={`font-montserrat font-extrabold text-xl ${logoGradient}`}>
                   SkillSphere
                 </span>
                 <button onClick={() => setIsOpen(false)} className="text-slate-500">
@@ -148,7 +154,7 @@ const Navbar = () => {
                     <Link
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="block py-3 text-lg font-semibold text-slate-700 border-b border-slate-50 hover:text-purple-700"
+                      className={`block py-3 text-lg font-semibold border-b border-slate-50 hover:text-[#4f46e5] ${pathname === link.href ? 'text-[#4f46e5]' : 'text-slate-700'}`}
                     >
                       {link.label}
                     </Link>
@@ -162,10 +168,10 @@ const Navbar = () => {
                 transition={{ delay: 0.4 }}
                 className="p-5 flex flex-col gap-3"
               >
-                <button className="w-full py-3 text-sm font-bold border border-purple-900 text-purple-900 rounded-xl">
+                <button className="w-full py-3 text-sm font-bold border-2 border-[#1e1b4b] text-[#1e1b4b] rounded-xl font-montserrat">
                   Log in
                 </button>
-                <button className="w-full py-3 text-sm font-bold bg-purple-800 text-white rounded-xl">
+                <button className="w-full py-3 text-sm font-bold bg-[#1e1b4b] text-white rounded-xl font-montserrat">
                   Sign up
                 </button>
               </motion.div>

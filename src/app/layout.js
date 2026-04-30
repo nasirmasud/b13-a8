@@ -1,4 +1,6 @@
 import { Inter, Montserrat } from "next/font/google";
+import Banner from "./components/Banner";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./globals.css";
 
@@ -33,7 +35,9 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
       >
         <Navbar />
+        <Banner />
         {children}
+        <Footer />
       </body>
     </html>
   );
