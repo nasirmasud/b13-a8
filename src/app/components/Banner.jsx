@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image'; // Next Image ইমপোর্ট করা হয়েছে
+import Image from 'next/image';
 import { FiArrowRight, FiPlayCircle } from 'react-icons/fi';
 
 const Banner = () => {
@@ -14,18 +14,34 @@ const Banner = () => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] mb-6 font-montserrat">
-              Master Your Future <br />
+            <motion.p
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="text-[#54f73f] font-bold tracking-widest uppercase text-xl"
+            >
+              Learn from Industry Experts
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] my-6 font-montserrat"
+            >
               <span className="bg-gradient-to-r from-[#4f46e5] via-[#54f73f] to-[#a855f7] bg-clip-text text-transparent">
                 With SkillSphere
               </span>
-            </h1>
-
-            <p className="text-slate-400 text-lg md:text-xl max-w-lg mb-10 leading-relaxed">
-              Explore world-class courses from industry experts and take your career to the next level with our modern learning platform.
-            </p>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+              className="text-[#54f73f] font-bold tracking-widest text-xl pb-10"
+            >
+              Upgrade Your Skills Today 🚀
+            </motion.p>
 
             <div className="flex flex-wrap gap-5">
               <motion.button
@@ -69,7 +85,7 @@ const Banner = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
