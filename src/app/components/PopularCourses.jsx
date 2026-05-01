@@ -5,14 +5,13 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { FiArrowRight, FiCheckCircle, FiClock, FiLayers, FiStar } from 'react-icons/fi';
 
-const SkillSphereSections = () => {
+const PopularCourses = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch('/data.json')
+    fetch('https://b13-a8.vercel.app/data.json')
       .then(res => res.json())
       .then(data => {
-        // Filter top 3 courses by rating
         const topRated = data.sort((a, b) => b.rating - a.rating).slice(0, 3);
         setCourses(topRated);
       });
@@ -21,7 +20,6 @@ const SkillSphereSections = () => {
   return (
     <div className="bg-[#f8fafc] text-[#1e293b]">
 
-      {/* 1. Trending Courses Section */}
       <section className="py-20 max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
@@ -44,6 +42,7 @@ const SkillSphereSections = () => {
                 <Image
                   src={course.image}
                   alt={course.title}
+                  priority
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -85,7 +84,7 @@ const SkillSphereSections = () => {
         </div>
       </section>
 
-      {/* 2. Learning Tips Section */}
+      {/* Learning Tips Section */}
       <section className="py-20 bg-indigo-50/50 border-y border-indigo-100">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
@@ -110,7 +109,7 @@ const SkillSphereSections = () => {
         </div>
       </section>
 
-      {/* 3. Top Instructors Section */}
+      {/* Top Instructors Section */}
       <section className="py-24 max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
         <h2 className="text-4xl font-black text-[#0f172a] mb-16 font-montserrat tracking-tight">Meet Our Top Instructors</h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
@@ -142,4 +141,4 @@ const SkillSphereSections = () => {
   );
 };
 
-export default SkillSphereSections;
+export default PopularCourses;
