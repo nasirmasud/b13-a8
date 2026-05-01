@@ -1,21 +1,16 @@
 import { getAllCourses } from '@/lib/getCourseData';
 import { FiArrowRight } from 'react-icons/fi';
-import CourseCard from './CourseCard';
-import TipsInstructor from './TipsInstructor';
+import CourseCard from '../components/CourseCard';
 
-export default async function PopularCourses() {
+const AllCoursesPage = async () => {
   const allCourses = await getAllCourses();
-
-  const topRated = allCourses
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 3);
 
   return (
     <div className="bg-[#f8fafc]">
       <section className="py-20 container mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
           <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-2">Popular Courses</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-2">Trending Courses</h2>
             <p className="text-slate-500">Pick the best-rated courses from our community.</p>
           </div>
           <button className="flex items-center gap-2 text-[#4f46e5] font-bold border-b-2 border-[#4f46e5]/20 pb-1 hover:border-[#4f46e5] transition-all">
@@ -24,12 +19,13 @@ export default async function PopularCourses() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {topRated.map((course, index) => (
+          {allCourses.map((course, index) => (
             <CourseCard key={course.id} course={course} index={index} />
           ))}
         </div>
       </section>
-      <TipsInstructor />
     </div>
-  );
+  )
 }
+
+export default AllCoursesPage
