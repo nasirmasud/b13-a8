@@ -14,12 +14,16 @@ const PopularCourses = async () => {
   return (
     <div className="bg-[#f8fafc]">
       <section className="py-20 container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-2">Popular Courses</h2>
-            <p className="text-slate-500">Pick the best-rated courses from our community.</p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+          <div className="text-left">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0f172a] mb-2 text-left">
+              Popular Courses
+            </h2>
+            <p className="text-slate-500 text-left">
+              Pick the best-rated courses from our community.
+            </p>
           </div>
-          <button className="flex items-center gap-2 text-[#4f46e5] font-bold border-b-2 border-[#4f46e5]/20 pb-1 hover:border-[#4f46e5] transition-all">
+          <button className="flex items-center gap-2 text-[#4f46e5] font-bold border-b-2 border-[#4f46e5]/20 pb-1 hover:border-[#4f46e5] transition-all w-fit">
             See all courses <FiArrowRight />
           </button>
         </div>
