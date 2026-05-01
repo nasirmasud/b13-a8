@@ -3,110 +3,240 @@
     "id": 1,
     "title": "Complete Web Development Bootcamp",
     "instructor": "Jhankar Mahbub",
+    "instructorTitle": "Founder of Programming Hero",
     "duration": "45 hours",
     "rating": 4.9,
+    "totalRatings": 15420,
+    "totalLearners": 85000,
     "level": "Beginner",
+    "tag": "Bestseller",
+    "lastUpdated": "4/2026",
+    "language": "Bangla",
+    "subtitles": ["English [Auto]", "12 more"],
     "description": "Master HTML, CSS, JavaScript, React, and Node.js to build industry-ready projects.",
     "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000",
-    "category": "Development"
+    "category": "Development",
+    "whatYouWillLearn": [
+      "Build 10+ real-world web projects to show off to employers",
+      "Master the MERN stack (MongoDB, Express, React, and Node)",
+      "Learn professional workflow using Git and GitHub",
+      "Deploy your websites to platforms like Vercel and Netlify"
+    ]
   },
   {
     "id": 2,
     "title": "Advanced Next.js 15 Mastery",
     "instructor": "Sumit Saha",
+    "instructorTitle": "Full Stack Developer & Educator",
     "duration": "15 hours",
     "rating": 4.8,
+    "totalRatings": 3200,
+    "totalLearners": 12500,
     "level": "Advanced",
+    "tag": "Hot & New",
+    "lastUpdated": "5/2026",
+    "language": "Bangla",
+    "subtitles": ["English"],
     "description": "Deep dive into App Router, Server Actions, and Performance Optimization in Next.js.",
     "image": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=1000",
-    "category": "Development"
+    "category": "Development",
+    "whatYouWillLearn": [
+      "Master Next.js 15 App Router and nested layouts",
+      "Implement complex Server Actions with optimistic UI updates",
+      "Optimize images and fonts for Core Web Vitals",
+      "Integrate advanced authentication using NextAuth.js"
+    ]
   },
   {
     "id": 3,
     "title": "UI/UX Design Fundamentals",
     "instructor": "Jane Cooper",
+    "instructorTitle": "Senior Product Designer",
     "duration": "12 hours",
     "rating": 4.7,
+    "totalRatings": 8900,
+    "totalLearners": 45000,
     "level": "Beginner",
+    "tag": "Highest Rated",
+    "lastUpdated": "3/2026",
+    "language": "English",
+    "subtitles": ["Spanish", "French", "5 more"],
     "description": "Learn the principles of modern UI/UX design using Figma and Adobe XD.",
     "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000",
-    "category": "Design"
+    "category": "Design",
+    "whatYouWillLearn": [
+      "Understand the difference between UI and UX",
+      "Create high-fidelity wireframes and prototypes in Figma",
+      "Master typography, color theory, and spacing",
+      "Conduct user research and usability testing"
+    ]
   },
   {
     "id": 4,
     "title": "Full-Stack MERN Stack Mastery",
     "instructor": "Anisul Islam",
+    "instructorTitle": "Software Engineer & YouTuber",
     "duration": "60 hours",
     "rating": 4.9,
+    "totalRatings": 12100,
+    "totalLearners": 68000,
     "level": "Intermediate",
+    "tag": "Bestseller",
+    "lastUpdated": "4/2026",
+    "language": "Bangla",
+    "subtitles": ["English [Auto]"],
     "description": "Build and deploy complex full-stack applications using MongoDB, Express, React, and Node.",
     "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1000",
-    "category": "Development"
+    "category": "Development",
+    "whatYouWillLearn": [
+      "Build a complete E-commerce site from scratch",
+      "Handle secure payments using Stripe API",
+      "Implement JWT based authentication and authorization",
+      "Manage complex state using Redux Toolkit"
+    ]
   },
   {
     "id": 5,
     "title": "Digital Marketing Strategy 2026",
     "instructor": "Robert Fox",
+    "instructorTitle": "Marketing Strategist",
     "duration": "25 hours",
     "rating": 4.5,
+    "totalRatings": 5600,
+    "totalLearners": 32000,
     "level": "Beginner",
+    "tag": "Trending",
+    "lastUpdated": "2/2026",
+    "language": "English",
+    "subtitles": ["German", "Hindi"],
     "description": "Comprehensive guide to SEO, SEM, and Social Media Marketing in the modern era.",
     "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000",
-    "category": "Marketing"
+    "category": "Marketing",
+    "whatYouWillLearn": [
+      "Rank websites on the first page of Google with SEO",
+      "Run profitable Facebook and Google Ad campaigns",
+      "Master Email marketing and automation tools",
+      "Analyze marketing data using Google Analytics 4"
+    ]
   },
   {
     "id": 6,
     "title": "Python for Data Science",
     "instructor": "Dr. Angela Yu",
+    "instructorTitle": "Developer and Lead Instructor",
     "duration": "30 hours",
     "rating": 4.8,
+    "totalRatings": 421582,
+    "totalLearners": 1771059,
     "level": "Intermediate",
+    "tag": "Bestseller",
+    "lastUpdated": "4/2026",
+    "language": "English",
+    "subtitles": ["Arabic [Auto]", "29 more"],
     "description": "Master Python libraries like Pandas, NumPy, and Matplotlib for data analysis.",
     "image": "https://images.unsplash.com/photo-1527474305487-b87b222841cc?q=80&w=1000",
-    "category": "Data Science"
+    "category": "Data Science",
+    "whatYouWillLearn": [
+      "Master Python for data cleaning and visualization",
+      "Build machine learning models using Scikit-Learn",
+      "Work with large datasets using Pandas DataFrames",
+      "Create interactive charts and dashboards"
+    ]
   },
   {
     "id": 7,
     "title": "Mastering TypeScript & Clean Code",
     "instructor": "Maximilian Schwarzmüller",
+    "instructorTitle": "Professional Web Developer",
     "duration": "18 hours",
     "rating": 4.7,
+    "totalRatings": 18500,
+    "totalLearners": 95000,
     "level": "Intermediate",
+    "tag": "Top Merchant",
+    "lastUpdated": "5/2026",
+    "language": "English",
+    "subtitles": ["Italian", "Japanese"],
     "description": "Write enterprise-level clean code using TypeScript and SOLID principles.",
     "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=1000",
-    "category": "Development"
+    "category": "Development",
+    "whatYouWillLearn": [
+      "Apply SOLID principles to JavaScript/TypeScript projects",
+      "Master advanced TypeScript types and Generics",
+      "Write unit tests for your TypeScript code",
+      "Refactor messy code into clean, maintainable structures"
+    ]
   },
   {
     "id": 8,
     "title": "App Development with Flutter",
     "instructor": "Hitesh Choudhary",
+    "instructorTitle": "Senior Mobile Engineer",
     "duration": "40 hours",
     "rating": 4.6,
+    "totalRatings": 9200,
+    "totalLearners": 52000,
     "level": "Beginner",
+    "tag": "Popular",
+    "lastUpdated": "3/2026",
+    "language": "Hindi/English",
+    "subtitles": ["English"],
     "description": "Build beautiful native cross-platform apps for iOS and Android using Flutter.",
     "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000",
-    "category": "Mobile Dev"
+    "category": "Mobile Dev",
+    "whatYouWillLearn": [
+      "Build native apps for iOS and Android with one codebase",
+      "Master Dart programming language from scratch",
+      "Implement complex UI designs and animations",
+      "Integrate Firebase for backend and push notifications"
+    ]
   },
   {
     "id": 9,
     "title": "Cyber Security Essentials",
     "instructor": "Nathan House",
+    "instructorTitle": "CEO of StationX",
     "duration": "22 hours",
     "rating": 4.9,
+    "totalRatings": 11000,
+    "totalLearners": 64000,
     "level": "Beginner",
+    "tag": "Bestseller",
+    "lastUpdated": "4/2026",
+    "language": "English",
+    "subtitles": ["Spanish", "Portuguese"],
     "description": "Learn to protect systems and networks from digital attacks from ground up.",
     "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000",
-    "category": "Security"
+    "category": "Security",
+    "whatYouWillLearn": [
+      "Understand the mindset of a hacker",
+      "Secure your home and office network",
+      "Master encryption and password management",
+      "Identify and prevent phishing and malware attacks"
+    ]
   },
   {
     "id": 10,
     "title": "GraphQL Mastery with Apollo",
     "instructor": "Stephen Grider",
+    "instructorTitle": "Engineering Architect",
     "duration": "14 hours",
     "rating": 4.7,
+    "totalRatings": 7400,
+    "totalLearners": 38000,
     "level": "Advanced",
+    "tag": "Expert Choice",
+    "lastUpdated": "5/2026",
+    "language": "English",
+    "subtitles": ["English [Auto]"],
     "description": "Build high-performance APIs and learn efficient data fetching with GraphQL.",
     "image": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1000",
-    "category": "Development"
+    "category": "Development",
+    "whatYouWillLearn": [
+      "Replace REST APIs with efficient GraphQL queries",
+      "Set up Apollo Client in React applications",
+      "Optimize data fetching with Dataloader",
+      "Build scalable GraphQL schemas and mutations"
+    ]
   }
 ]

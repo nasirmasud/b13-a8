@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/courses', label: 'Courses' },
+    { href: '/all-courses', label: 'Courses' },
     { href: '/profile', label: 'My Profile' },
   ];
 

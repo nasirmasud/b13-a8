@@ -3,7 +3,8 @@ import { FiArrowRight } from 'react-icons/fi';
 import CourseCard from './CourseCard';
 import TipsInstructor from './TipsInstructor';
 
-export default async function PopularCourses() {
+
+const PopularCourses = async () => {
   const allCourses = await getAllCourses();
 
   const topRated = allCourses
@@ -33,3 +34,5 @@ export default async function PopularCourses() {
     </div>
   );
 }
+
+export default PopularCourses

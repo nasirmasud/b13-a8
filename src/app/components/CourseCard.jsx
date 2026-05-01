@@ -2,11 +2,15 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FiClock, FiLayers, FiStar } from 'react-icons/fi';
+
+const MotionLink = motion.create(Link)
 
 const CourseCard = ({ course, index }) => {
   return (
-    <motion.div
+    <MotionLink
+      href={`/all-courses/${course.id}`}
       whileHover={{ y: -10 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -57,7 +61,7 @@ const CourseCard = ({ course, index }) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </MotionLink>
   );
 };
 
