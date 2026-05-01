@@ -7,7 +7,7 @@
     "rating": 4.9,
     "level": "Beginner",
     "description": "Master HTML, CSS, JavaScript, React, and Node.js to build industry-ready projects.",
-    "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--_m9Yp2_m--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/097oz6uy4cl9scf2os9p.png",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000",
     "category": "Development"
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.8,
     "level": "Advanced",
     "description": "Deep dive into App Router, Server Actions, and Performance Optimization in Next.js.",
-    "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--E8p8p8p8--/f_auto,q_auto/https://nextjs.org/static/blog/next-15/next15.png",
+    "image": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=1000",
     "category": "Development"
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.7,
     "level": "Beginner",
     "description": "Learn the principles of modern UI/UX design using Figma and Adobe XD.",
-    "image": "https://res.cloudinary.com/dz209s6ak/image/upload/v1642152342/Starting_UI_UX_Design_f_auto_q_auto_w_1000.png",
+    "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000",
     "category": "Design"
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.9,
     "level": "Intermediate",
     "description": "Build and deploy complex full-stack applications using MongoDB, Express, React, and Node.",
-    "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--7f3_Ff9s--/f_auto,q_auto/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/76gh889v88v98v.png",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1000",
     "category": "Development"
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.5,
     "level": "Beginner",
     "description": "Comprehensive guide to SEO, SEM, and Social Media Marketing in the modern era.",
-    "image": "https://res.cloudinary.com/dz209s6ak/image/upload/v1625123456/digital-marketing-strategy.png",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000",
     "category": "Marketing"
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.8,
     "level": "Intermediate",
     "description": "Master Python libraries like Pandas, NumPy, and Matplotlib for data analysis.",
-    "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--88fFfG--/f_auto,q_auto/https://images.ctfassets.net/23aex0u8wvgz/python-data-science.png",
+    "image": "https://images.unsplash.com/photo-1527474305487-b87b222841cc?q=80&w=1000",
     "category": "Data Science"
   },
   {
@@ -73,7 +73,7 @@
     "rating": 4.7,
     "level": "Intermediate",
     "description": "Write enterprise-level clean code using TypeScript and SOLID principles.",
-    "image": "https://res.cloudinary.com/dz209s6ak/image/upload/v1634123456/typescript-mastery.png",
+    "image": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=1000",
     "category": "Development"
   },
   {
@@ -84,7 +84,7 @@
     "rating": 4.6,
     "level": "Beginner",
     "description": "Build beautiful native cross-platform apps for iOS and Android using Flutter.",
-    "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--fF88gH--/f_auto,q_auto/https://flutter.dev/assets/images/shared/brand/flutter-logo-sharing.png",
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000",
     "category": "Mobile Dev"
   },
   {
@@ -95,7 +95,7 @@
     "rating": 4.9,
     "level": "Beginner",
     "description": "Learn to protect systems and networks from digital attacks from ground up.",
-    "image": "https://res.cloudinary.com/dz209s6ak/image/upload/v1612123456/cyber-security-basics.png",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000",
     "category": "Security"
   },
   {
@@ -106,7 +106,7 @@
     "rating": 4.7,
     "level": "Advanced",
     "description": "Build high-performance APIs and learn efficient data fetching with GraphQL.",
-    "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--GqL88f--/f_auto,q_auto/https://graphql.org/img/og-image.png",
+    "image": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1000",
     "category": "Development"
   }
 ]
