@@ -1,27 +1,42 @@
 'use client';
 
+import { authClient } from '@/lib/auth-client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { FiClock, FiLayers, FiStar } from 'react-icons/fi';
 
-const MotionLink = motion.create(Link)
-
 const CourseCard = ({ course, index }) => {
+  const { data: session } = authClient.useSession();
+  const user = session?.user;
+  const router = useRouter();
+
+  const handleCardClick = () => {
+    const targetPath = `/all-courses/${course.id}`;
+
+    if (!user) {
+      router.push(`/login?callbackUrl=${encodeURIComponent(targetPath)}`);
+    } else {
+      router.push(targetPath);
+    }
+  };
+
   return (
-    <MotionLink
-      href={`/all-courses/${course.id}`}
+    <motion.div
+      onClick={handleCardClick}
       whileHover={{ y: -10 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="bg-white rounded-[32px] overflow-hidden border border-slate-200 flex flex-col h-full group shadow-sm hover:shadow-xl transition-all duration-300"
+      className="bg-white rounded-[32px] overflow-hidden border border-slate-200 flex flex-col h-full group shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
     >
+      {/* Course Image Section */}
       <div className="relative h-56 w-full">
         <Image
           src={course.image}
           alt={course.title}
           priority={index === 0}
+          loading={index === 0 ? "eager" : "lazy"}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -33,6 +48,7 @@ const CourseCard = ({ course, index }) => {
         </div>
       </div>
 
+      {/* Course Content Section */}
       <div className="p-8 flex flex-col flex-grow">
         <div className="flex items-center gap-3 mb-4">
           <span className="flex items-center gap-1 text-[#f59e0b] font-bold text-sm">
@@ -48,6 +64,7 @@ const CourseCard = ({ course, index }) => {
           {course.title}
         </h3>
 
+        {/* Footer Info */}
         <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
           <div className="flex flex-col">
             <span className="text-slate-400 text-[10px] uppercase font-bold tracking-tighter">Instructor</span>
@@ -61,7 +78,7 @@ const CourseCard = ({ course, index }) => {
           </div>
         </div>
       </div>
-    </MotionLink>
+    </motion.div>
   );
 };
 

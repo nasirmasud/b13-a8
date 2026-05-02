@@ -30,13 +30,13 @@ export default function Registration() {
       email,
       password,
       image,
-      callbackURL: "/",
+      callbackURL: "/login",
     });
 
     console.log({ data, error });
 
     if (!error) {
-      router.push("/");
+      router.push("/login");
     }
   };
 
@@ -124,7 +124,7 @@ export default function Registration() {
         <Button
           type="button"
           onClick={handleGoogleSignIn}
-          className="bg-blue-950 text-white hover:bg-blue-800 w-full max-w-96 font-semibold"
+          className="w-full rounded-full bg-transparent text-slate-900 border border-[#1e1b4b]  hover:bg-[#1e1b4b] hover:text-white transition-all font-montserrat"
           radius="full"
         >
           <GrGoogle />

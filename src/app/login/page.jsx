@@ -11,9 +11,15 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const callbackUrl = searchParams.get("callbackUrl") || "/";
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,17 +29,21 @@ export default function LoginPage() {
     const { data, error } = await authClient.signIn.email({
       email,
       password,
-      callbackURL: '/'
-    })
+      callbackURL: callbackUrl,
+    });
+
+    if (!error) {
+      router.push(callbackUrl);
+    }
     console.log(data, error);
   };
 
   const handleGoogleSignIn = async () => {
-    const data = await authClient.signIn.social({
+    await authClient.signIn.social({
       provider: "google",
+      callbackURL: callbackUrl,
     });
   };
-
 
   return (
     <Card className="border mx-auto w-125 py-10 my-20 border-gray-300">
@@ -48,7 +58,6 @@ export default function LoginPage() {
             if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
               return "Please enter a valid email address";
             }
-
             return null;
           }}
         >
@@ -72,7 +81,6 @@ export default function LoginPage() {
             if (!/[0-9]/.test(value)) {
               return "Password must contain at least one number";
             }
-
             return null;
           }}
         >
@@ -98,7 +106,7 @@ export default function LoginPage() {
       <div className="divider">OR</div>
       <div className="flex justify-center w-full px-10">
         <Button onClick={handleGoogleSignIn}
-          className="bg-blue-950 text-white hover:bg-blue-700 w-full max-w-96 rounded-full"
+          className="w-full rounded-full bg-transparent text-slate-900 border border-[#1e1b4b]  hover:bg-[#1e1b4b] hover:text-white transition-all font-montserrat"
         >
           <GrGoogle />
           Login With Google
