@@ -15,8 +15,7 @@ import { useRouter } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
 
 export default function Registration() {
-
-  const router = useRouter()
+  const router = useRouter();
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -31,32 +30,35 @@ export default function Registration() {
       email,
       password,
       image,
-    })
-    console.log({ data, error })
+      callbackURL: "/",
+    });
+
+    console.log({ data, error });
 
     if (!error) {
-      router.push('/')
+      router.push("/");
     }
   };
 
-  const handleGoogleSignUp = async () => {
-    const data = await authClient.signUp.social({
+  const handleGoogleSignIn = async () => {
+    await authClient.signIn.social({
       provider: "google",
+      callbackURL: "/",
     });
   };
 
   return (
-    <Card className="border mx-auto w-125 py-10 my-20 border-gray-300">
-      <h1 className="text-center text-2xl font-bold">Sign Up</h1>
+    <Card className="border mx-auto w-125 py-10 my-20 border-gray-300 shadow-sm" radius="lg">
+      <h1 className="text-center text-2xl font-bold mb-6">Create Account</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
-        <TextField isRequired name="name" type="text">
+        <TextField isRequired name="name" type="text" radius="full">
           <Label>Name</Label>
           <Input placeholder="Enter your name" />
           <FieldError />
         </TextField>
 
-        <TextField isRequired name="image" type="text">
+        <TextField isRequired name="image" type="text" radius="full">
           <Label>Image URL</Label>
           <Input placeholder="Image URL" />
           <FieldError />
@@ -66,11 +68,11 @@ export default function Registration() {
           isRequired
           name="email"
           type="email"
+          radius="full"
           validate={(value) => {
             if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
               return "Please enter a valid email address";
             }
-
             return null;
           }}
         >
@@ -81,9 +83,9 @@ export default function Registration() {
 
         <TextField
           isRequired
-          minLength={8}
           name="password"
           type="password"
+          radius="full"
           validate={(value) => {
             if (value.length < 8) {
               return "Password must be at least 8 characters";
@@ -97,31 +99,33 @@ export default function Registration() {
 
             return null;
           }}
+
         >
           <Label>Password</Label>
           <Input placeholder="Enter your password" />
-          <Description>
-            Must be at least 8 characters with 1 uppercase and 1 number
-          </Description>
+          <Description>Min 8 characters, 1 uppercase, 1 number</Description>
           <FieldError />
         </TextField>
 
         <div className="flex gap-2">
-          <Button type="submit" className="bg-blue-950 text-white hover:bg-blue-700">
+          <Button type="submit" color="secondary" radius="full" className="bg-blue-950 text-white hover:bg-blue-800">
             <Check />
             Submit
           </Button>
-          <Button type="reset" variant="secondary" className="text-blue-800 border">
+          <Button type="reset" variant="flat" radius="full">
             Reset
           </Button>
         </div>
       </Form>
 
-      <div className="divider">OR</div>
+      <div className="divider my-6 px-10 text-gray-400">OR</div>
+
       <div className="flex justify-center w-full px-10">
         <Button
-          onClick={handleGoogleSignUp}
+          type="button"
+          onClick={handleGoogleSignIn}
           className="bg-blue-950 text-white hover:bg-blue-800 w-full max-w-96 font-semibold"
+          radius="full"
         >
           <GrGoogle />
           Register With Google
