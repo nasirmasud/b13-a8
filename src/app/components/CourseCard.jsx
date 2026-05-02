@@ -60,7 +60,7 @@ const CourseCard = ({ course, index }) => {
           </span>
         </div>
 
-        <h3 className="text-xl font-bold text-[#0f172a] mb-3 min-h-[56px] line-clamp-2">
+        <h3 className="text-xl font-bold text-[#0f172a] mb-3 min-h-[56px] line-clamp-2 group-hover:underline">
           {course.title}
         </h3>
 
@@ -70,6 +70,7 @@ const CourseCard = ({ course, index }) => {
             <span className="text-slate-400 text-[10px] uppercase font-bold tracking-tighter">Instructor</span>
             <span className="font-bold text-sm text-[#334155]">{course.instructor}</span>
           </div>
+
           <div className="text-right">
             <span className="text-slate-400 text-[10px] uppercase font-bold tracking-tighter">Duration</span>
             <span className="flex items-center gap-1 text-sm font-semibold text-[#64748b]">
