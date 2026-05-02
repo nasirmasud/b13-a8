@@ -29,7 +29,7 @@ const Navbar = () => {
         <Link href="/" className="flex-shrink-0 mr-2">
           <motion.h1
             whileHover={{ scale: 1.05 }}
-            className={`font-montserrat font-extrabold text-2xl tracking-tight ${logoGradient} cursor-pointer`}
+            className={`font-montserrat font-extrabold text-5xl tracking-tight ${logoGradient} cursor-pointer`}
           >
             SkillSphere
           </motion.h1>
@@ -68,20 +68,24 @@ const Navbar = () => {
             );
           })}
           <div className="flex items-center gap-3">
-            <motion.button
-              whileHover={{ y: -1 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-5 py-2 text-sm font-bold border border-[#1e1b4b] text-[#1e1b4b] rounded-lg hover:bg-[#1e1b4b] hover:text-white transition-all font-montserrat"
-            >
-              Log in
-            </motion.button>
-            <motion.button
-              whileHover={{ y: -1, boxShadow: "0px 10px 20px rgba(30, 27, 75, 0.2)" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-5 py-2 text-sm font-bold bg-[#1e1b4b] text-white rounded-lg hover:bg-indigo-900 transition-all font-montserrat"
-            >
-              Sign up
-            </motion.button>
+            <Link href={"/login"}>
+              <motion.button
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-5 py-2 text-sm font-bold border border-[#1e1b4b] text-[#1e1b4b] rounded-lg hover:bg-[#1e1b4b] hover:text-white transition-all font-montserrat"
+              >
+                Log in
+              </motion.button>
+            </Link>
+            <Link href={"/registration"}>
+              <motion.button
+                whileHover={{ y: -1, boxShadow: "0px 10px 20px rgba(30, 27, 75, 0.2)" }}
+                whileTap={{ scale: 0.95 }}
+                className="px-5 py-2 text-sm font-bold bg-[#1e1b4b] text-white rounded-lg hover:bg-indigo-900 transition-all font-montserrat"
+              >
+                Registration
+              </motion.button>
+            </Link>
           </div>
         </div>
       </div>
@@ -168,12 +172,12 @@ const Navbar = () => {
                 transition={{ delay: 0.4 }}
                 className="p-5 flex flex-col gap-3"
               >
-                <button className="w-full py-3 text-sm font-bold border-2 border-[#1e1b4b] text-[#1e1b4b] rounded-xl font-montserrat">
+                <Link href={"/login"} className="w-full py-3 text-sm font-bold border-2 border-[#1e1b4b] text-[#1e1b4b] rounded-xl font-montserrat">
                   Log in
-                </button>
-                <button className="w-full py-3 text-sm font-bold bg-[#1e1b4b] text-white rounded-xl font-montserrat">
-                  Sign up
-                </button>
+                </Link>
+                <Link href={"/registration"} className="w-full py-3 text-sm font-bold bg-[#1e1b4b] text-white rounded-xl font-montserrat">
+                  Registration
+                </Link>
               </motion.div>
             </motion.div>
           </>

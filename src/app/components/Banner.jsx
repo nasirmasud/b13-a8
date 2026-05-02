@@ -31,15 +31,16 @@ const Banner = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] my-6 font-montserrat"
             >
+              <span className='text-xl text-violet-600'>With </span>
               <span className="bg-gradient-to-r from-[#4f46e5] via-[#54f73f] to-[#a855f7] bg-clip-text text-transparent">
-                With SkillSphere
+                SkillSphere
               </span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.8 }}
-              className="text-[#54f73f] font-bold tracking-widest text-xl pb-10"
+              className="text-[#54f73f] font-bold tracking-widest text-xl pb-10 uppercase"
             >
               Upgrade Your Skills Today 🚀
             </motion.p>
