@@ -11,10 +11,9 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import { GrGoogle } from "react-icons/gr";
 
 export default function LoginPage() {
-
-
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,7 +25,15 @@ export default function LoginPage() {
       password,
       callbackURL: '/'
     })
+    console.log(data, error);
   };
+
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
 
   return (
     <Card className="border mx-auto w-125 py-10 my-20 border-gray-300">
@@ -88,7 +95,15 @@ export default function LoginPage() {
         </div>
       </Form>
 
-
+      <div className="divider">OR</div>
+      <div className="flex justify-center w-full px-10">
+        <Button onClick={handleGoogleSignIn}
+          className="bg-blue-950 text-white hover:bg-blue-700 w-full max-w-96 rounded-full"
+        >
+          <GrGoogle />
+          Login With Google
+        </Button>
+      </div>
     </Card>
   );
 }

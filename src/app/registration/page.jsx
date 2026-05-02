@@ -12,6 +12,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { GrGoogle } from "react-icons/gr";
 
 export default function Registration() {
 
@@ -31,14 +32,17 @@ export default function Registration() {
       password,
       image,
     })
-
-
     console.log({ data, error })
 
     if (!error) {
       router.push('/')
     }
+  };
 
+  const handleGoogleSignUp = async () => {
+    const data = await authClient.signUp.social({
+      provider: "google",
+    });
   };
 
   return (
@@ -113,10 +117,16 @@ export default function Registration() {
         </div>
       </Form>
 
-
+      <div className="divider">OR</div>
+      <div className="flex justify-center w-full px-10">
+        <Button
+          onClick={handleGoogleSignUp}
+          className="bg-blue-950 text-white hover:bg-blue-800 w-full max-w-96 font-semibold"
+        >
+          <GrGoogle />
+          Register With Google
+        </Button>
+      </div>
     </Card>
   );
 }
-
-
-// 24.55|auth
