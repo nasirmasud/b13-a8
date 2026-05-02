@@ -95,11 +95,15 @@ const Navbar = () => {
             ) : (
               <div className="flex items-center gap-3">
                 {/* Desktop Avatar with Proper Nesting */}
-                <Avatar isBordered color="primary" size="md">
+                <Avatar color="primary"
+                  className="w-8 h-8 ring-2 ring-offset-2 ring-[#4f46e5]"
+                  src={user?.image}
+                  name={user?.name}
+                  showFallback>
                   <Avatar.Image src={user?.image || defaultAvatar} alt={user.name || "User"} referrerPolicy='no-referrer' />
                   <Avatar.Fallback>{user?.name?.charAt(0) || "U"}</Avatar.Fallback>
                 </Avatar>
-                <Button onClick={handleSignOut} color="danger" variant="flat" size="sm" className="px-5 py-2 text-sm font-bold border border-[#1e1b4b] text-[#1e1b4b] rounded-lg hover:bg-[#1e1b4b] hover:text-white transition-all font-montserrat">
+                <Button onClick={handleSignOut} color="danger" variant="flat" size="sm" className="px-5 py-2 text-sm font-bold border border-[#1e1b4b] text-[#1e1b4b] rounded-full hover:bg-[#1e1b4b] hover:text-white transition-all font-montserrat">
                   Logout
                 </Button>
               </div>
@@ -158,7 +162,11 @@ const Navbar = () => {
                 ) : (
                   <div className="flex flex-col gap-4 items-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
                     {/* Mobile Drawer Large Avatar */}
-                    <Avatar isBordered color="primary" className="w-16 h-16">
+                    <Avatar color="primary"
+                      className="w-8 h-8 ring-2 ring-offset-2 ring-[#4f46e5]"
+                      src={user?.image}
+                      name={user?.name}
+                      showFallback>
                       <Avatar.Image src={user?.image || defaultAvatar} alt={user.name} referrerPolicy='no-referrer' />
                       <Avatar.Fallback className="text-xl">{user?.name?.charAt(0) || "U"}</Avatar.Fallback>
                     </Avatar>
