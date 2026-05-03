@@ -14,11 +14,7 @@ const CourseCard = ({ course, index }) => {
 
   const handleCardClick = (e) => {
     e.stopPropagation();
-    if (!user) {
-      router.push(`/login?callbackUrl=${encodeURIComponent(targetPath)}`);
-    } else {
-      router.push(targetPath);
-    }
+    router.push(targetPath);
   };
 
   return (
