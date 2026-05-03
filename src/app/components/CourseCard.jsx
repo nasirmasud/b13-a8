@@ -10,10 +10,10 @@ const CourseCard = ({ course, index }) => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
   const router = useRouter();
+  const targetPath = `/all-courses/${course.id}`;
 
-  const handleCardClick = () => {
-    const targetPath = `/all-courses/${course.id}`;
-
+  const handleCardClick = (e) => {
+    e.stopPropagation();
     if (!user) {
       router.push(`/login?callbackUrl=${encodeURIComponent(targetPath)}`);
     } else {
@@ -28,10 +28,12 @@ const CourseCard = ({ course, index }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="bg-white rounded-[32px] overflow-hidden border border-slate-200 flex flex-col h-full group shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && handleCardClick(e)}
+      className="bg-white rounded-[32px] overflow-hidden border border-slate-200 flex flex-col h-full group shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer outline-none focus:ring-2 focus:ring-[#4f46e5]/20"
     >
-      {/* Course Image Section */}
-      <div className="relative h-56 w-full">
+      <div className="relative h-56 w-full overflow-hidden">
         <Image
           src={course.image}
           alt={course.title}
@@ -48,23 +50,21 @@ const CourseCard = ({ course, index }) => {
         </div>
       </div>
 
-      {/* Course Content Section */}
       <div className="p-8 flex flex-col flex-grow">
         <div className="flex items-center gap-3 mb-4">
-          <span className="flex items-center gap-1 text-[#f59e0b] font-bold text-sm">
+          <div className="flex items-center gap-1 text-[#f59e0b] font-bold text-sm">
             <FiStar className="fill-[#f59e0b]" /> {course.rating}
-          </span>
+          </div>
           <span className="text-slate-300">|</span>
-          <span className="text-slate-500 text-xs font-semibold flex items-center gap-1 uppercase tracking-wider">
+          <div className="text-slate-500 text-xs font-semibold flex items-center gap-1 uppercase tracking-wider">
             <FiLayers /> {course.level}
-          </span>
+          </div>
         </div>
 
-        <h3 className="text-xl font-bold text-[#0f172a] mb-3 min-h-[56px] line-clamp-2 group-hover:underline">
+        <h3 className="text-xl font-bold text-[#0f172a] mb-3 min-h-[56px] line-clamp-2 group-hover:text-[#4f46e5] transition-colors">
           {course.title}
         </h3>
 
-        {/* Footer Info */}
         <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
           <div className="flex flex-col">
             <span className="text-slate-400 text-[10px] uppercase font-bold tracking-tighter">Instructor</span>
