@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
+import { toast } from "react-toastify";
 
 export default function Registration() {
   const router = useRouter();
@@ -33,19 +34,23 @@ export default function Registration() {
       image,
       callbackURL: "/login",
     });
-
-    console.log({ data, error });
-
+    if (error) {
+      toast.error(error.message || "Registration failed! Try again.");
+      return;
+    }
+    await authClient.signOut();
     if (!error) {
+      toast.success("Account created successfully! Redirecting to login...");
       router.push("/login");
     }
   };
 
   const handleGoogleSignIn = async () => {
+    toast.info("Redirecting to Google login...");
     await authClient.signIn.social({
       provider: "google",
-      callbackURL: "/",
-    });
+      callbackURL: callbackUrl,
+    }).catch(() => toast.error("Google Sign-In failed!"));
   };
 
   return (
@@ -54,7 +59,7 @@ export default function Registration() {
         <h1 className="text-center text-2xl font-bold mb-8">Create Account</h1>
 
         <Form className="flex w-full flex-col gap-5" onSubmit={onSubmit}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             <TextField isRequired name="name" type="text" radius="full" className="w-full">
               <Label>Name</Label>
               <Input placeholder="Enter your name" />

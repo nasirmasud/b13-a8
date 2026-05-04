@@ -1,4 +1,6 @@
 import { Inter, Montserrat } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import "./globals.css";
@@ -35,6 +37,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <ToastContainer position='bottom-right' />
         <Footer />
       </body>
     </html>

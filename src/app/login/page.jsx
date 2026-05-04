@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
+import { toast } from "react-toastify"; // ১. টোস্ট ইমপোর্ট করুন
 
 export default function LoginPage() {
   const router = useRouter();
@@ -31,26 +32,28 @@ export default function LoginPage() {
       callbackURL: callbackUrl,
     });
 
-    if (!error) {
-      router.push(callbackUrl);
+    if (error) {
+      toast.error(error.message || "Login failed! Please check your credentials.");
+      return;
     }
+    toast.success("Login Successful! Welcome back.");
+    router.push(callbackUrl);
     console.log(data, error);
   };
 
   const handleGoogleSignIn = async () => {
+    toast.info("Redirecting to Google login...");
     await authClient.signIn.social({
       provider: "google",
       callbackURL: callbackUrl,
-    });
+    }).catch(() => toast.error("Google Sign-In failed!"));
   };
 
   return (
     <div className="flex items-center justify-center min-h-[calc(100vh-64px)] px-4 py-10">
-      {/* Card width changed to responsive classes */}
       <Card className="border w-full max-w-[450px] p-6 md:p-10 border-gray-300 shadow-sm">
         <h1 className="text-center text-2xl font-bold mb-8">Login to SkillSphere</h1>
 
-        {/* Form width now fills the container */}
         <Form className="flex w-full flex-col gap-5" onSubmit={onSubmit}>
           <TextField
             isRequired
