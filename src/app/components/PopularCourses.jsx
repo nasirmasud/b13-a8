@@ -1,4 +1,5 @@
 import { getAllCourses } from '@/lib/getCourseData';
+import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
 import CourseCard from './CourseCard';
 import TipsInstructor from './TipsInstructor';
@@ -23,9 +24,9 @@ const PopularCourses = async () => {
               Pick the best-rated courses from our community.
             </p>
           </div>
-          <button className="flex items-center gap-2 text-[#4f46e5] font-bold border-b-2 border-[#4f46e5]/20 pb-1 hover:border-[#4f46e5] transition-all w-fit">
+          <Link href="/all-courses" className="flex items-center gap-2 text-[#4f46e5] font-bold border-b-2 border-[#4f46e5]/20 pb-1 hover:border-[#4f46e5] transition-all w-fit">
             See all courses <FiArrowRight />
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
