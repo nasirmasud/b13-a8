@@ -4,7 +4,7 @@ import { authClient } from '@/lib/auth-client';
 import { Avatar, Button } from '@heroui/react';
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -12,6 +12,8 @@ const Navbar = () => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
   const [isOpen, setIsOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("")
+  const router = useRouter()
   const pathname = usePathname();
   const { scrollY } = useScroll();
 
@@ -22,6 +24,14 @@ const Navbar = () => {
       document.body.style.overflow = 'unset';
     }
   }, [isOpen]);
+
+  const handleSearch = (e) => {
+    if (e.key === 'Enter' && searchQuery.trim() !== "") {
+      router.push(`/all-courses?search=${encodeURIComponent(searchQuery)}`);
+      setSearchQuery("");
+      setIsOpen(false);
+    }
+  };
 
   const shadow = useTransform(
     scrollY,
@@ -65,6 +75,9 @@ const Navbar = () => {
               </span>
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleSearch}
                 placeholder="Search for courses"
                 className="w-full pl-10 pr-5 py-2 rounded-full border border-slate-200 bg-slate-50 text-sm text-slate-700 focus:outline-none focus:border-[#4f46e5] transition-all"
               />
@@ -130,6 +143,20 @@ const Navbar = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
+              </div>
+
+              {/* Mobile Search */}
+              <div className="px-5 py-3 border-b border-slate-50">
+                <div className="relative flex items-center">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={handleSearch}
+                    placeholder="Search courses..."
+                    className="w-full pl-4 pr-4 py-2 rounded-xl bg-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-[#4f46e5]/20"
+                  />
+                </div>
               </div>
 
               <div className="flex-1 overflow-y-auto py-4 px-5 space-y-1">
